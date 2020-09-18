@@ -1,0 +1,69 @@
+#insertion at begining of singly linked list
+#include <iostream>
+using namespace std;
+
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+void insert()
+{
+    int new_data;
+    cout<<"enter the node to insert:";
+    cin>>new_data;
+    struct node *head;
+    struct node *new_node=(struct node*)malloc(sizeof(struct node));
+   
+    new_node->data=new_data;
+    new_node->next=head;
+     head=new_node;
+     cout<<"the linked list after insertion :";
+}
+void display()
+{
+    
+struct node *temp,*head;
+temp=head;
+       while(temp!=NULL)
+       {
+        cout<<temp->data<<" ";
+         temp=temp->next;
+       }
+}      
+void creat()
+{
+    struct node *head,*temp,*new_node;
+    int n,element,i;
+    new_node= (struct node *)malloc(sizeof(struct node));
+    cout<<"enter the no of ndes:";
+    cin>>n;
+    cout<<"the node data  ";
+   cin>>element;
+    new_node->data=element;
+    new_node->next=NULL;
+    head=new_node;
+    temp=head;
+    for(i=2;i<=n;i++)
+    {
+        cout<<"enter the node data  ";
+        cin>>element;
+         new_node=(struct node *)malloc(sizeof(struct node));
+        new_node->data=element;
+        new_node->next=NULL;
+        temp->next=new_node;
+        temp=temp->next;
+       }
+       
+       
+    
+}
+int main()
+{
+    
+       
+    creat();
+    insert();
+    display();
+    }
